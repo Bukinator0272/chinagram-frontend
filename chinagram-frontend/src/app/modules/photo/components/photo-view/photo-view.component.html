@@ -1,0 +1,27 @@
+<div>
+</div>
+<mat-card class="example-card" >
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>%username%</mat-card-title>
+    <mat-card-subtitle>{{currentPhoto.date | date}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{BASE_URL}}/files/{{currentPhoto.id}}.jpeg" alt="Photo">
+  <mat-card-content>
+    <p *ngIf="!edit">
+      {{currentPhoto.description}}
+    </p>
+    <mat-form-field *ngIf="edit" class="example-full-width">
+      <input [(ngModel)]="currentPhoto.description" name="description"
+             matInput #message maxlength="256" placeholder="Description">
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button *ngIf="!edit" mat-icon-button mat-button (click)="setEditMode()">EDIT</button>
+    <button *ngIf="edit" mat-button (click)="updatePhoto().subscribe()">SAVE</button>
+    <button mat-icon-button mat-button>LIKE</button>
+    <button mat-button>ADD COMMENT</button>
+  </mat-card-actions>
+</mat-card>
+

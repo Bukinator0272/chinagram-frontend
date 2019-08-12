@@ -1,0 +1,32 @@
+<div class="photo-upload">
+
+<div *ngIf="currentFileUpload" class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar"
+       attr.aria-valuenow="{{progress.percentage}}"
+       aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+    {{progress.percentage}}%
+  </div>
+</div>
+
+<div>
+<form (ngSubmit)="postPhoto().subscribe()">
+
+
+  <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+  <input hidden (change)="selectFile($event)" #fileInput type="file" id="file">
+  <div *ngIf="selectedFile" >Chosen file: {{selectedFile.name}}</div>
+
+
+  <mat-form-field class="example-full-width">
+    <input [(ngModel)]="postedPhoto.description" name="description"
+           matInput #message maxlength="256" placeholder="Description">
+    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+  </mat-form-field>
+
+
+  <button  mat-raised-button color="primary" [disabled]="!selectedFile" type="submit">
+    <span>Submit</span>
+  </button>
+</form>
+</div>
+</div>

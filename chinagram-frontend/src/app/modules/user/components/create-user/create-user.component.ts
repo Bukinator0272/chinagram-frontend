@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../model/user";
-import {ApiService} from "../shared/api.service";
+import {User} from "../../model/user";
+import {ApiService} from "../../../shared/api.service";
 
 @Component({
   selector: 'app-create-user',
