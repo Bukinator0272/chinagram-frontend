@@ -3,6 +3,7 @@ import {PhotoService} from "../../services/photo.service";
 import {Photo} from "../../model/Photo";
 import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
+import {BASE_URL} from "../../../../china-config";
 
 @Component({
   selector: 'china-photo-view',
@@ -13,7 +14,7 @@ export class PhotoViewComponent implements OnInit {
   private currentPhoto: Photo;
   private currentPhotoId: string;
   private edit: boolean = false;
-  public BASE_URL: string = 'http://localhost:8080'
+  private BASE_URL: string = BASE_URL;
 
   constructor(private photoCreateService: PhotoService, private route: ActivatedRoute) {
   }

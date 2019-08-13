@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "../user/model/user";
 import {Observable} from "rxjs";
+import {BASE_URL} from "../../china-config"
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private BASE_URL = "http://localhost:8080";
-  private CREATE_USER_URL = `${this.BASE_URL}/users`;
-  private GET_USER_BY_ID_URL = `${this.BASE_URL}/users/`;
+  private CREATE_USER_URL = `${BASE_URL}/users`;
+  private GET_USER_BY_ID_URL = `${BASE_URL}/users/`;
 
   constructor(private http: HttpClient) {
 
