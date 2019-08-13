@@ -1,0 +1,21 @@
+<div class="feed-container">
+
+<mat-card  *ngFor="let photo of photos" class="example-card" >
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>%username%</mat-card-title>
+    <mat-card-subtitle>{{photo.date | date}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{BASE_URL}}/files/{{photo.id}}.jpeg" alt="Photo">
+  <mat-card-content>
+    <p *ngIf="!edit">
+      {{photo.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button mat-button>LIKE</button>
+    <button mat-button>ADD COMMENT</button>
+  </mat-card-actions>
+</mat-card>
+
+</div>
