@@ -11,10 +11,11 @@ import {BASE_URL} from "../../../../china-config";
   styleUrls: ['./photo-view.component.less']
 })
 export class PhotoViewComponent implements OnInit {
+  private BASE_URL: string = BASE_URL;
   private currentPhoto: Photo;
   private currentPhotoId: string;
   private edit: boolean = false;
-  private BASE_URL: string = BASE_URL;
+  private isLoading: boolean = true;
 
   constructor(private photoCreateService: PhotoService, private route: ActivatedRoute) {
   }
@@ -28,6 +29,7 @@ export class PhotoViewComponent implements OnInit {
   ngOnInit() {
     this.currentPhotoId = this.route.snapshot.paramMap.get('id');
     this.getPhoto(this.currentPhotoId);
+    this.isLoading = false;
   }
 
   private setEditMode(): void {
