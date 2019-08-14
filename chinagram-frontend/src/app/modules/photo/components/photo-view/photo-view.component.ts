@@ -23,13 +23,13 @@ export class PhotoViewComponent implements OnInit {
   private getPhoto(id: String) {
     this.photoCreateService.getPhoto(id).subscribe(response => {
       this.currentPhoto = response
+      this.isLoading = false;
     });
   }
 
   ngOnInit() {
     this.currentPhotoId = this.route.snapshot.paramMap.get('id');
     this.getPhoto(this.currentPhotoId);
-    this.isLoading = false;
   }
 
   private setEditMode(): void {

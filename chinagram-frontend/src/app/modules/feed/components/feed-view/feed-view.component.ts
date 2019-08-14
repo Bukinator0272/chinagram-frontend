@@ -11,7 +11,7 @@ import {BASE_URL} from "../../../../china-config";
 export class FeedViewComponent implements OnInit {
 
   constructor(private feedService: FeedService) { }
-  private BASE_URL = BASE_URL;
+  public BASE_URL = BASE_URL;
   private photos: Photo[];
 
   ngOnInit() {
