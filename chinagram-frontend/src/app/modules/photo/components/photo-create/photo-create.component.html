@@ -12,8 +12,8 @@
 <form (ngSubmit)="postPhoto().subscribe()">
 
 
-  <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-  <input hidden (change)="selectFile($event)" #fileInput type="file" id="file">
+  <button class="china-form" type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+  <input accept='image/*' hidden (change)="selectFile($event)" #fileInput type="file" id="file">
   <div *ngIf="selectedFile" >Chosen file: {{selectedFile.name}}</div>
 
 

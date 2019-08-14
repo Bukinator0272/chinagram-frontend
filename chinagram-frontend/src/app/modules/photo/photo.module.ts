@@ -6,8 +6,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatCardModule, MatInputModule} from "@angular/material";
+import {MatButtonModule, MatCardModule, MatInputModule, MatProgressSpinnerModule} from "@angular/material";
 import {PhotoViewComponent} from "./components/photo-view/photo-view.component";
+
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {PhotoViewComponent} from "./components/photo-view/photo-view.component";
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ]
 })
 export class PhotoModule { }

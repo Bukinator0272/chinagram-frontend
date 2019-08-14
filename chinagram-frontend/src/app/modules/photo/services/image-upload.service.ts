@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {BASE_URL} from "../../../china-config";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageUploadService {
-  private BASE_URL = "http://localhost:8080";
   constructor(private http: HttpClient) { }
 
   pushFileToStorage(file: File, name: string): Observable<HttpEvent<{}>> {
@@ -15,7 +15,7 @@ export class ImageUploadService {
 
 
     formdata.append('file', file, name + '.jpeg');
-    const req = new HttpRequest('POST', this.BASE_URL+'/post', formdata, {
+    const req = new HttpRequest('POST', BASE_URL+'/post', formdata, {
       reportProgress: true,
       responseType: 'text'
     });

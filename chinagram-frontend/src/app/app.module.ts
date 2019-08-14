@@ -12,6 +12,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {PhotoModule} from "./modules/photo/photo.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatButtonModule, MatCardModule, MatInputModule, MatNativeDateModule} from "@angular/material";
+import {FeedModule} from "./modules/feed/feed.module";
 
 
 
@@ -47,14 +48,14 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
     AppRoutingModule,
     PhotoModule,
+    FeedModule,
     BrowserAnimationsModule,
     MatInputModule,
-
     MatNativeDateModule,
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
 
   ],
   providers: [],
