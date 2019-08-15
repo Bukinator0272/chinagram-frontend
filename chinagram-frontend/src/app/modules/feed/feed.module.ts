@@ -11,6 +11,7 @@ import {
   MatNativeDateModule,
   MatProgressSpinnerModule
 } from "@angular/material";
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -28,7 +29,8 @@ import {
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    InfiniteScrollModule
   ]
 })
 export class FeedModule { }
