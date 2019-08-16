@@ -1,6 +1,10 @@
-<div class="feed-container">
+<div *ngIf="!isLoading" class="feed-container"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()" >
 
-<mat-card  *ngFor="let photo of photos" class="example-card" >
+<mat-card *ngFor="let photo of photos" class="example-card" >
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>%username%</mat-card-title>
