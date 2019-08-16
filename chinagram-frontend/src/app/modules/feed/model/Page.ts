@@ -1,8 +1,10 @@
-
-
 export class Page {
 
-  constructor(public size: number, public page: number) {
+  public size: number;
+  public page: number;
 
+  constructor(size: number, page: number) {
+    this.size = size;
+    this.page = page;
   }
 }
