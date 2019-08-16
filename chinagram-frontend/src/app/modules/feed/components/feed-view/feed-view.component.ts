@@ -14,7 +14,7 @@ export class FeedViewComponent implements OnInit {
   constructor(private feedService: FeedService) { }
   public BASE_URL = BASE_URL;
   private photos: Photo[] = [];
-  currentPageNumber: number = 0;
+  currentPageNumber: number = 1;
   currentPage: Page;
 
   public isLoading: boolean = true;
@@ -22,9 +22,6 @@ export class FeedViewComponent implements OnInit {
   ngOnInit() {
     this.initializePage();
     this.getFeed();
-    console.log(this.currentPage.page)
-    console.log(this.currentPage.size)
-    console.log(this.photos)
   }
 
   private getFeed() {
@@ -39,7 +36,6 @@ export class FeedViewComponent implements OnInit {
   }
 
   onScroll() {
-    console.log('scrolled!!');
     this.currentPageNumber++;
     this.initializePage();
     this.getFeed();
